@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:id="@+id/cd_produk"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="10dp"
+    app:cardBackgroundColor="@color/grey_100"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="20dp"
+    android:scrollbars="vertical"
+    app:cardCornerRadius="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/_6sdp"
+        android:orientation="vertical">
+        <ImageView
+            android:id="@+id/img_produk"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_120sdp"
+            android:layout_gravity="center"
+            android:background="@color/grey_100"/>
+        <TextView
+            android:id="@+id/judul"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textColor="@color/blue_800"
+            android:textSize="@dimen/_16sdp"
+            android:text="Baju Pria"/>
+        <TextView
+            android:id="@+id/kode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:textColor="@color/blue_800"
+            android:textSize="@dimen/_14sdp"
+            android:text="Kode Buku : IPA"/>
+        <TextView
+            android:id="@+id/kategori"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:textColor="@color/blue_800"
+            android:textSize="@dimen/_14sdp"
+            android:text="Kategori : IPA"/>
+        <TextView
+            android:id="@+id/halaman"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:textColor="@color/blue_800"
+            android:textSize="@dimen/_14sdp"
+            android:text="Jumlah Hal : 28"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:textColor="@color/blue_800"
+            android:textSize="@dimen/_14sdp"
+            android:text="Deskripsi :"/>
+        <TextView
+            android:id="@+id/deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:gravity="start"
+            android:textColor="@color/blue_800"
+            android:textSize="@dimen/_14sdp"
+            android:text="xxxxx "/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

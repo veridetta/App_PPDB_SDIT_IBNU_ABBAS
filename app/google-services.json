@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1068470595668",
+    "project_id": "app-ppdb-sd-it-ibnu-abbas",
+    "storage_bucket": "app-ppdb-sd-it-ibnu-abbas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1068470595668:android:a8840ba6dfbf7b467afdc1",
+        "android_client_info": {
+          "package_name": "com.example.appperpustakaansmpn1rembang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1068470595668-i2878799j60q1mfhreha1sfjm3mt9cfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzl9x74JB3inL7D1IITqblXYDzP45l_Fo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1068470595668-i2878799j60q1mfhreha1sfjm3mt9cfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.HomeFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_16sdp"
+                android:gravity="center"
+                android:layout_gravity="center|top"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="@dimen/_120sdp"
+                    android:layout_height="@dimen/_100sdp"
+                    android:background="@drawable/logo_sdit" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Applikasi PPDB"
+                    android:textColor="@color/blue_800"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SDIT Ibnu Abbas"
+                    android:textColor="@color/blue_800"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kabupaten Cirebon"
+                    android:textColor="@color/blue_800"
+                    android:textSize="@dimen/_14sdp"
+                    android:layout_marginBottom="@dimen/_29sdp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="@dimen/_4sdp"
+                    android:paddingLeft="@dimen/_4sdp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Selamat Datang,"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_14sdp"/>
+                    <TextView
+                        android:id="@+id/tvNama"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Selamat Datang,"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/ly_no_data"
+                        android:paddingLeft="@dimen/_6sdp"
+                        android:paddingRight="@dimen/_6sdp"
+                        android:paddingTop="@dimen/_18sdp"
+                        android:paddingBottom="@dimen/_18sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/grey_200">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="NO DATA"
+                            android:textColor="@color/grey_600"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="@dimen/_30sdp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Segera lengkapi data pendaftaranmu."
+                            android:textColor="@color/grey_800"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="@dimen/_13sdp"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:id="@+id/ly_data"
+                        android:paddingLeft="@dimen/_6sdp"
+                        android:paddingRight="@dimen/_6sdp"
+                        android:paddingTop="@dimen/_18sdp"
+                        android:paddingBottom="@dimen/_18sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:background="@color/blue_A400">
+                        <TextView
+                            android:id="@+id/tv_data_judul"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Proses Verifikasi"
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="@dimen/_30sdp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Datamu sedang diverifikasi oleh tim terkait."
+                            android:textColor="@color/white"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:textSize="@dimen/_13sdp"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+        <include layout="@layout/ly_loading"/>
+    </RelativeLayout>
+</FrameLayout>
