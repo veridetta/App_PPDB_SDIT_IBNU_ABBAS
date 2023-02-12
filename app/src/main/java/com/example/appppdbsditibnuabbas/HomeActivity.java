@@ -51,11 +51,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragment).detach(fragment).commitNow();
                 getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragment).attach(fragment).commitNow();
                 break;
-            case R.id.borrow_list:
-                fragment = borrowListFragment;
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragment).detach(fragment).commitNow();
-                getSupportFragmentManager().beginTransaction().replace(R.id.flFragment, fragment).attach(fragment).commitNow();
-                break;
+
             case R.id.logout:
                 SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(HomeActivity.this.getApplicationContext());
                 SharedPreferences.Editor editor = preferences.edit();

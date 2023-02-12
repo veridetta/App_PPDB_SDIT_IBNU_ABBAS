@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
         btnSignup.setOnClickListener(new View.OnClickListener() {
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
         btnHelp.setOnClickListener(new View.OnClickListener() {
@@ -58,13 +58,13 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, HelpActivity.class);
                 startActivity(intent);
-                finish();
+
             }
         });
         btnExit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
+
                 System.exit(0);
             }
         });

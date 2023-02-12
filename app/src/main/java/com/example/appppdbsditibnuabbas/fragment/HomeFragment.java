@@ -47,15 +47,16 @@ public class HomeFragment extends Fragment {
 
     SharedPreferences sharedPreferences;
     String nama ="";
-    TextView tvNama, tvDataJudul;
+    TextView tvNama, tvDataJudul, tvDataText;
     LinearLayout lyData, lyNodata;
-    Boolean sudahDaftar=false;
+
     //
     private RecyclerView recyclerView;
     BookAdapter bookAdapter;
-    DatabaseReference mbase;
     RelativeLayout lyLoading;
     String path = "";
+    DatabaseReference mbase;
+    Boolean sudahDaftar=false;
     Boolean start=false;
     CardView btnAll, btnIPA, btnIPS, btnMat, btnIndo, btnSby, btnAgama;
     View view;
@@ -96,7 +97,6 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_home, container, false);
         init();
-        init_fb();
         return view;
     }
     void init(){
@@ -117,14 +117,8 @@ public class HomeFragment extends Fragment {
         lyData = view.findViewById(R.id.ly_data);
         lyNodata = view.findViewById(R.id.ly_no_data);
         tvDataJudul = view.findViewById(R.id.tv_data_judul);
-
-        if(sudahDaftar){
-            lyData.setVisibility(View.VISIBLE);
-            lyNodata.setVisibility(View.GONE);
-        }else{
-            lyNodata.setVisibility(View.VISIBLE);
-            lyData.setVisibility(View.GONE);
-        }
+        tvDataText=view.findViewById(R.id.tv_data_text);
+        init_fb();
     }
     void init_fb(){
         FirebaseRecyclerOptions<Book> op;
@@ -144,11 +138,6 @@ public class HomeFragment extends Fragment {
                     .setQuery(query, Book.class)
                     .build();
         }
-        if (start){
-            bookAdapter.stopListening();
-            bookAdapter.updateOptions(op);
-        }
-        bookAdapter = new BookAdapter(op, getActivity());
         query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
@@ -159,14 +148,23 @@ public class HomeFragment extends Fragment {
                     sudahDaftar=true;
                     for(DataSnapshot friend: dataSnapshot.getChildren()){
                         String firebase_id = (String) friend.getKey();
+                        tvDataJudul.setText(friend.child("status").getValue().toString());
+                        if(friend.child("status").getValue().toString().equals("pending")){
+
+                        }else{
+                            tvDataText.setText("Berhasil di verifikasi");
+                        }
                         Log.d("ContactSync","handle number "+firebase_id+" "+"Anak-anak"+" "+friend);
                     }
                     Log.d("ContactSync","handle number outer "+dataSnapshot);
                     //user exist
-                }
-                else {
+                    lyData.setVisibility(View.VISIBLE);
+                    lyNodata.setVisibility(View.GONE);
+                } else {
                     //user_does_not_exist
                     sudahDaftar=false;
+                    lyNodata.setVisibility(View.VISIBLE);
+                    lyData.setVisibility(View.GONE);
                 }
                 lyLoading.setVisibility(View.GONE);
             }
@@ -176,27 +174,6 @@ public class HomeFragment extends Fragment {
                 Log.d("ContactSync","handle number oncancel "+databaseError.getMessage());
             }
         });
-        if(sudahDaftar){
-            lyData.setVisibility(View.VISIBLE);
-            lyNodata.setVisibility(View.GONE);
-        }else{
-            lyNodata.setVisibility(View.VISIBLE);
-            lyData.setVisibility(View.GONE);
-        }
-    }
-    @Override
-    public void onStart()
-    {
-        super.onStart();
-
-    }
-
-    // Function to tell the app to stop getting
-    // data from database on stopping of the activity
-    @Override
-    public void onStop()
-    {
-        super.onStop();
-
+        lyLoading.setVisibility(View.GONE);
     }
 }

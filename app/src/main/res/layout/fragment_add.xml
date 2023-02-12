@@ -7,7 +7,6 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <include layout="@layout/ly_loading"/>
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -15,7 +14,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/_16sdp"
-                android:layout_gravity="center"
+                android:layout_gravity="center_horizontal"
                 android:gravity="center"
                 android:orientation="vertical">
                 <ImageView
@@ -80,7 +79,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/nis"
-                            android:hint="NISN"/>
+                            android:hint="NISN"
+                            android:inputType="number" />
                     </com.google.android.material.textfield.TextInputLayout>
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
@@ -98,7 +98,7 @@
                         android:paddingTop="@dimen/_6sdp"
                         android:text="Jenis Kelamin : "/>
                     <Spinner
-                        android:id="@+id/sp_kat"
+                        android:id="@+id/sp_jk"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:entries="@array/array_kategori"
@@ -123,7 +123,7 @@
                         <EditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/kode"
+                            android:id="@+id/hp"
                             android:inputType="number"
                             android:hint="Nomor HP"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -193,16 +193,17 @@
                             android:orientation="vertical"
                             android:gravity="center">
                             <ImageView
+                                android:id="@+id/img_pas_foto"
                                 android:layout_width="@dimen/_100sdp"
                                 android:layout_height="@dimen/_100sdp"
                                 android:background="@drawable/ic_action_add" />
                             <Button
-                                android:id="@+id/btn_nisn"
+                                android:id="@+id/btn_pas_foto"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_6sdp"
                                 android:backgroundTint="@color/blue_800"
-                                android:text="Pilih Gambar NISN"/>
+                                android:text="Pilih Gambar Pas Foto"/>
                         </LinearLayout>
                         <LinearLayout
                             android:layout_width="1dp"
@@ -213,16 +214,17 @@
                             android:orientation="vertical"
                             android:gravity="center">
                             <ImageView
+                                android:id="@+id/img_kip"
                                 android:layout_width="@dimen/_100sdp"
                                 android:layout_height="@dimen/_100sdp"
                                 android:background="@drawable/ic_action_add" />
                             <Button
-                                android:id="@+id/btn_kk"
+                                android:id="@+id/btn_kip"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="@dimen/_6sdp"
                                 android:backgroundTint="@color/blue_800"
-                                android:text="Pilih Gambar KK"/>
+                                android:text="Pilih Gambar KIP"/>
                         </LinearLayout>
                     </LinearLayout>
                     <Button
@@ -235,5 +237,6 @@
                 </LinearLayout>
             </LinearLayout>
         </androidx.core.widget.NestedScrollView>
+        <include layout="@layout/ly_loading"/>
     </RelativeLayout>
 </FrameLayout>
